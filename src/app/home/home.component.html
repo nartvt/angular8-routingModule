@@ -1,0 +1,18 @@
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+     <a [routerLink]="['/tin-tuc']" routerLinkActive="router-link-active" >Tin Tuc</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="['/trang-chu']" routerLinkActive="router-link-active" >Trang Chu</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/danh-sach-phim']" routerLinkActive="router-link-active">Danh Sach Phim</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
