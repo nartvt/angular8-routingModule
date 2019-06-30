@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { TrangChuComponentComponent } from './trang-chu-component/trang-chu-component.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 const routes: Routes = [
     {
@@ -22,9 +21,6 @@ const routes: Routes = [
                 component: TinTucComponent
             }
         ]
-    },
-    {
-        path:"**",component:PageNotFoundComponent
     }
 ];
 

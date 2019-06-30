@@ -10,7 +10,9 @@ import { DanhSachPhimModule } from './danh-sach-phim/danh-sach-phim.module';
   declarations: [HomeComponent, TrangChuComponentComponent, TinTucComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    DanhSachPhimModule
+
   ]
 })
 export class HomeModule { }
