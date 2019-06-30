@@ -6,15 +6,16 @@ import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 
 const routes: Routes = [
     {
-        path: "",redirectTo:"home",pathMatch:"fullmatch",
-        component: HomeComponent, children: [
+        path: "",
+        component: HomeComponent, 
+        children: [
             {
                 path: "trang-chu",
                 component:TrangChuComponentComponent
             },
             {
-                path: "danh-sach-phim",
-                loadChildren:'./danh-sach-phim/danh-sach-phim.module#DanhSachPhimModule'
+                path: "movies-collections",
+                loadChildren:'./movies-collections/movies-collections.module#MoviesCollectionsModule'
             },
             {
                 path: "tin-tuc",

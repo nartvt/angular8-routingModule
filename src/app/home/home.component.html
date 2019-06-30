@@ -1,21 +1,24 @@
 <!-- Grey with black text -->
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-     <!-- <a [routerLink]="['/home/tin-tuc']" routerLinkActive="router-link-active" >Tin Tuc</a> -->
-     <a class="nav-link" routerLink="/home/tin-tuc">Tin Tuc</a>
-    </li>
-    <li class="nav-item">
-      <!-- <a [routerLink]="['/home/trang-chu']" routerLinkActive="router-link-active" >Trang Chu</a> -->
-      <a class="nav-link" routerLink="/home/trang-chu">Trang Chu</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/home/danh-sach-phim">Danh Sach Phim</a>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <!-- <a [routerLink]="['/home/trang-chu']" routerLinkActive="router-link-active" >Trang Chu</a> -->
+        <a class="nav-link" routerLink="/home/trang-chu">Home Pages</a>
+      </li>
+      <li class="nav-item active">
+        <!-- <a [routerLink]="['/home/tin-tuc']" routerLinkActive="router-link-active" >Tin Tuc</a> -->
+        <a class="nav-link" routerLink="/home/tin-tuc">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home/movies-collections">Movies Collections</a>
         <!-- <a [routerLink]="['/home/danh-sach-phim']" routerLinkActive="router-link-active">Danh Sach Phim</a> -->
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 </nav>
 <router-outlet></router-outlet>

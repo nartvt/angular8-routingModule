@@ -4,14 +4,17 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { TrangChuComponentComponent } from './trang-chu-component/trang-chu-component.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
-import { DanhSachPhimModule } from './danh-sach-phim/danh-sach-phim.module';
+import { MoviesCollectionsModule } from './movies-collections/movies-collections.module';
 
 @NgModule({
-  declarations: [HomeComponent, TrangChuComponentComponent, TinTucComponent],
+  declarations: [
+    HomeComponent, 
+    TrangChuComponentComponent, 
+    TinTucComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    DanhSachPhimModule
+    MoviesCollectionsModule
 
   ]
 })
