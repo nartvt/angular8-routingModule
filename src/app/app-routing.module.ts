@@ -13,8 +13,7 @@ const routes: Routes = [
 
   /// Page Not Found
   {
-    path:"**",
-    component: PageNotFoundComponent
+    path:"**", component: PageNotFoundComponent
   }
 ];
 

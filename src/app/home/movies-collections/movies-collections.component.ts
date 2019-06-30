@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/_core/movie.service';
+import { MovieManagementService } from 'src/app/_core/movie-management.service';
 
 @Component({
   selector: 'app-movies-collections',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesCollectionsComponent implements OnInit {
 
-  constructor() { }
+  moviesCollections: any;
+
+  constructor(
+    private movieService:MovieService,
+    private movieManagements: MovieManagementService
+  ) { }
 
   ngOnInit() {
+    this.getMoviesCollections();
   }
 
+  getMoviesCollections(){
+    this.movieManagements.getListMovies().subscribe((data:any)=>{
+      console.log(data);
+      this.moviesCollections=data;
+    });
+  }
 }

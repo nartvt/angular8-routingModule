@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { TrangChuComponentComponent } from './trang-chu-component/trang-chu-component.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { MoviesCollectionsModule } from './movies-collections/movies-collections.module';
+import { MaterialModule } from '../_core/material/material.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MoviesCollectionsModule } from './movies-collections/movies-collections
   imports: [
     CommonModule,
     HomeRoutingModule,
+    MaterialModule,
     MoviesCollectionsModule
 
   ]
