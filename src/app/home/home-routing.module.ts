@@ -20,6 +20,10 @@ const routes: Routes = [
             {
                 path: "tin-tuc",
                 component: TinTucComponent
+            },
+            {
+                path: "ticket-room/:id",
+                loadChildren: './ticket-room/ticket-room.module#TicketRoomModule'
             }
         ]
     }

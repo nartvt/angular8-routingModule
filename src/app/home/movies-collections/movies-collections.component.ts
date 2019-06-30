@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/_core/movie.service';
 import { MovieManagementService } from 'src/app/_core/movie-management.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movies-collections',
@@ -13,7 +14,7 @@ export class MoviesCollectionsComponent implements OnInit {
 
   constructor(
     private movieService:MovieService,
-    private movieManagements: MovieManagementService
+    private movieManagements: MovieManagementService,
   ) { }
 
   ngOnInit() {
@@ -26,4 +27,5 @@ export class MoviesCollectionsComponent implements OnInit {
       this.moviesCollections=data;
     });
   }
+  
 }

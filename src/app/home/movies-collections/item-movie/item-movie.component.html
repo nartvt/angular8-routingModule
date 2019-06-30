@@ -2,6 +2,11 @@
   <img class="card-img-top" src="{{ movie.HinhAnh }}" />
   <div class="card-body">
     <h4 class="card-title">{{ movie.TenPhim }}</h4>
-    <button class="btn btn-primary">Like</button>
+    <a class="btn btn-primary" routerLink="/home/movies-collections/movie-detail/{{movie.MaPhim }}">Detaiil</a>
+    <a class="btn btn-danger" [routerLink]="['/home/movies-collections/movie-detail',movie.MaPhim]"
+      [queryParams]="{ movieName: this.movie.TenPhim}"
+      routerLinkActive="router-link-active">Detail</a>
+    <button class="btn btn-success" (click)="detailMovies()">Detail</button>
+    <!-- <button class="btn btn-primary">Detail</button> -->
   </div>
 </div>
