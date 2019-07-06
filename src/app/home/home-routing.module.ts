@@ -24,6 +24,10 @@ const routes: Routes = [
             {
                 path: "ticket-room/:id",
                 loadChildren: './ticket-room/ticket-room.module#TicketRoomModule'
+            },
+            {
+                path: "form",
+                loadChildren: "./form/form.module#FormModule"
             }
         ]
     }

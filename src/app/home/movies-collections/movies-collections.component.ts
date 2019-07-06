@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/_core/movie.service';
 import { MovieManagementService } from 'src/app/_core/movie-management.service';
 import { ActivatedRoute } from '@angular/router';
+import { DataCommonService } from './../../_core/service/data-common.service';
 
 @Component({
   selector: 'app-movies-collections',
@@ -15,6 +16,7 @@ export class MoviesCollectionsComponent implements OnInit {
   constructor(
     private movieService:MovieService,
     private movieManagements: MovieManagementService,
+    private dataCommonService: DataCommonService
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class MoviesCollectionsComponent implements OnInit {
       console.log(data);
       this.moviesCollections=data;
     });
+    // const uri = "QuanLyPhim/LayDanhSachPhim?MaNhom=GP02";
+    // this.dataCommonService.get(uri).subscribe((data) => {
+    //   console.log(data);
+    // });
   }
   
 }

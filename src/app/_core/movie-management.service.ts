@@ -37,7 +37,7 @@ export class MovieManagementService {
   }
   getParamFromURL(maLichChieu) {
 
-    const url = `http://sv2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?MaLichChieu=${maLichChieu}`;
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?MaLichChieu=${maLichChieu}`;
     return this.http.get(url).pipe(
       tap(
         () => { },

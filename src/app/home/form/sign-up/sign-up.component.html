@@ -1,0 +1,43 @@
+<h1 style="text-align: center">SIGN UP</h1>
+<div class="container">
+  <form #registerForm="ngForm" (ngSubmit)="signUp(registerForm.value)">
+    <div class="form-group col-sm-4">
+      <label for="userName">User Name</label>
+      <input type="userName" class="form-control" #UserName='ngModel' name="userName" ngModel required minlength="7"
+        maxlength="15">
+      <div *ngIf="UserName.errors && (UserName.dirty || UserName.touched)" class="text text-danger">
+        <div *ngIf="UserName.errors.required" class="text-danger"> Please Input User Name </div>
+        <div *ngIf="UserName.errors.minlength || UserName.errors.maxlength" class="text-danger"> Please Input charactor
+          form 7 to 15 </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-4">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" #Password='ngModel' name="password" ngModel>
+    </div>
+    <div class="form-group col-sm-4">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #Email="ngModel"
+        name="email" ngModel required>
+      <div *ngIf="Email.errors && (Email.dirty || Email.touched)" class="text text-danger">
+        <div *ngIf="Email.errors.required" class="text-danger"> Please Input Email </div>
+        <div *ngIf="Email.errors.pattern" class="text-danger"> Email wrong format </div>
+      </div>
+      <div class="form-group com-sm-4">
+        <label for="phoneNumber">Phone Number:</label>
+        <input 
+        type="phoneNumber" 
+        class="form-control" 
+        pattern="[0][1-9]{10}" 
+        id="phoneNumber" 
+        #PhoneNumber="ngModel" name="phoneNumber" ngModel required>
+        <div *ngIf="PhoneNumber.errors && (PhoneNumber.dirty || PhoneNumber.touched)" class="text text-danger">
+          <div *ngIf="PhoneNumber.errors.required" class="text-danger"> Please Input Phone Number </div>
+          <div *ngIf="PhoneNumber.errors.pattern" class="text-danger"> PhoneNumber wrong format begin 0 and max 10 number </div>
+        </div>
+      </div>
+       
+      <button type="submit" class="btn btn-primary" *ngIf="!registerForm.submitted" [disabled]="!registerForm.valid">Submit</button>
+    </div>
+  </form>
+</div>
