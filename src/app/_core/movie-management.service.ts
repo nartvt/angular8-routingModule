@@ -10,7 +10,7 @@ export class MovieManagementService {
 
   constructor(private http: HttpClient) { }
   getListMovies(): Observable<any> {
-    const url = "http://svcy2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP02 ";
+    const url = "http://svcy2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP09";
     return this.http.get(url).pipe(
       tap(
         () => { },

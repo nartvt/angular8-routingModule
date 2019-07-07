@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { TrangChuComponentComponent } from './trang-chu-component/trang-chu-component.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
+import { AuthGuard } from '../_core/guards/auth.guard';
 
 const routes: Routes = [
     {
@@ -15,7 +16,8 @@ const routes: Routes = [
             },
             {
                 path: "movies-collections",
-                loadChildren:'./movies-collections/movies-collections.module#MoviesCollectionsModule'
+                loadChildren: './movies-collections/movies-collections.module#MoviesCollectionsModule',
+                canActivate: [AuthGuard]
             },
             {
                 path: "tin-tuc",

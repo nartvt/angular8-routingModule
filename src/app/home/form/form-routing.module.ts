@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './form.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { CandeactiveGuard } from 'src/app/_core/guards/candeactive.guard';
 
 const routes: Routes = [
     {
@@ -11,10 +12,12 @@ const routes: Routes = [
         children: [
             {
                 path: "sign-up",
-                component: SignUpComponent
+                component: SignUpComponent,
+                canDeactivate: [CandeactiveGuard]
             }, {
                 path: "sign-in",
-                component:SignInComponent
+                component: SignInComponent
+               
             }
         ]
     }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi:"http://sv2.myclass.vn/api/"
+  urlApi:"http://svcy2.myclass.vn/api"
 };
 
 /*

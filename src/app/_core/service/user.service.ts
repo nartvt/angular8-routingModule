@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
-import { environment } from './../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-let urlApi = ``;
 
 const httpOption = {
   headers: new HttpHeaders({
     "Content-Type": "application/json"
   })
 };
+
 @Injectable({
   providedIn: 'root'
 })
-export class DataCommonService {
+export class UserService {
 
-  constructor(private httpslient: HttpClient) {
-    urlApi = environment.urlApi;
-  }
-  public get(uri: string): Observable<any> {
-
-    return this.httpslient.get(urlApi + "/" + uri).pipe(
+  constructor(
+    private http: HttpClient
+  ) { }
+  signUp(user): Observable<any> {
+    const url = "http://svcy2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung";
+    return this.http.post(url, user, httpOption).pipe(
       tap(
         () => { },
         catchError(err => {
@@ -33,8 +32,11 @@ export class DataCommonService {
   handleErr(err) {
     return err;
   }
-  public post(uri: string, data?: Object): Observable<any> {
-    return this.httpslient.post(urlApi + "/" + uri, data, httpOption).pipe(
+  signIn(obj) {
+   console.log(obj);
+   
+    const url = `http://svcy2.myclass.vn/api/QuanLyNguoiDung/DangNhap?TaiKhoan=${obj.TaiKhoan}&MatKhau=${obj.MatKhau}`;
+    return this.http.post(url, obj, httpOption).pipe(
       tap(
         () => { },
         catchError(err => {
@@ -44,3 +46,4 @@ export class DataCommonService {
     )
   }
 }
+
