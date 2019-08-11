@@ -4,6 +4,8 @@ import { HomeComponent } from './home.component';
 import { TrangChuComponentComponent } from './trang-chu-component/trang-chu-component.component';
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { AuthGuard } from '../_core/guards/auth.guard';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 const routes: Routes = [
     {
@@ -30,6 +32,14 @@ const routes: Routes = [
             {
                 path: "form",
                 loadChildren: "./form/form.module#FormModule"
+            },
+            {
+                path: "pipe",
+               component: PipeComponent
+            },
+            {
+                path: "lifeCycle",
+                component: LifeCycleComponent
             }
         ]
     }

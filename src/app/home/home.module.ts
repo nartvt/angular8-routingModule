@@ -6,17 +6,20 @@ import { TrangChuComponentComponent } from './trang-chu-component/trang-chu-comp
 import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { MoviesCollectionsModule } from './movies-collections/movies-collections.module';
 import { MaterialModule } from '../_core/material/material.module';
+import { PipeModule } from './pipe/pipe.module';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 
 @NgModule({
   declarations: [
     HomeComponent, 
     TrangChuComponentComponent, 
-    TinTucComponent],
+    TinTucComponent, LifeCycleComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     MaterialModule,
-    MoviesCollectionsModule
+    MoviesCollectionsModule,
+    PipeModule
 
   ]
 })

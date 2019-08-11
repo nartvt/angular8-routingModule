@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from 'src/app/_core/models/movie';
 import { Router } from '@angular/router';
+import { ShareDataService } from 'src/app/_core/share/share-data.service';
 
 
 @Component({
@@ -12,9 +13,24 @@ export class ItemMovieComponent implements OnInit {
 
   @Input() movie;
 
-  constructor(private router:Router) { }
+  constructor(
+    private router: Router,
+    private sharedataService: ShareDataService) { }
 
   ngOnInit() {
+  }
+  testArray() {
+    return [
+      {
+        maLichChieu: 'L001',
+        ngayChieu: '2019-03-09'
+      },
+      {
+        maLichChieu: 'L002',
+        ngayChieu: '2019-03-09'
+      }
+
+    ];
   }
   detailMovies() {
     this.router.navigate(
@@ -27,5 +43,8 @@ export class ItemMovieComponent implements OnInit {
         movieName: this.movie.TenPhim
       }}
     );
+  }
+  xemNhanh() {
+    this.sharedataService.sharingDataDetail(this.movie);
   }
 }
